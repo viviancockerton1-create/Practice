@@ -1,0 +1,93 @@
+name: ARC-AGI-2 Frozen Solver Holdout
+
+on:
+  push:
+    paths:
+      - 'benchmarks/arc_holdout_harness.py'
+      - '.github/workflows/arc-agi-2-holdout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  frozen-holdout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out benchmark repository
+        uses: actions/checkout@v4
+
+      - name: Clone pinned ARC-AGI-2 dataset
+        id: dataset
+        run: |
+          git clone --quiet https://github.com/arcprize/ARC-AGI-2.git vendor/ARC-AGI-2
+          git -C vendor/ARC-AGI-2 checkout --quiet f3283f727488ad98fe575ea6a5ac981e4a188e49
+
+      - name: Select answer-free holdout and verify frozen blobs
+        id: prepare
+        continue-on-error: true
+        run: python benchmarks/arc_holdout_harness.py prepare --arc-root vendor/ARC-AGI-2
+
+      - name: Generate predictions with unchanged frozen solver
+        id: predict
+        if: steps.prepare.outcome == 'success'
+        continue-on-error: true
+        run: python benchmarks/arc_holdout_harness.py predict
+
+      - name: Score against untouched official outputs
+        id: score
+        if: steps.predict.outcome == 'success'
+        continue-on-error: true
+        run: python benchmarks/arc_holdout_harness.py score --arc-root vendor/ARC-AGI-2
+
+      - name: Write holdout workflow diagnostic
+        if: always()
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          DATASET_OUTCOME: ${{ steps.dataset.outcome }}
+          PREPARE_OUTCOME: ${{ steps.prepare.outcome }}
+          PREDICT_OUTCOME: ${{ steps.predict.outcome }}
+          SCORE_OUTCOME: ${{ steps.score.outcome }}
+        run: |
+          mkdir -p benchmarks/arc_agi2_public/holdout_001
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          payload = {
+              "source_sha": os.environ["SOURCE_SHA"],
+              "recorded_at": datetime.now(timezone.utc).isoformat(),
+              "steps": {
+                  "dataset": os.environ["DATASET_OUTCOME"],
+                  "prepare": os.environ["PREPARE_OUTCOME"],
+                  "predict": os.environ["PREDICT_OUTCOME"],
+                  "score": os.environ["SCORE_OUTCOME"],
+              },
+          }
+          with open("benchmarks/arc_agi2_public/holdout_001/workflow_diagnostic.json", "w", encoding="utf-8") as f:
+              json.dump(payload, f, indent=2, sort_keys=True)
+              f.write("\n")
+          PY
+
+      - name: Commit frozen holdout evidence
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add benchmarks/arc_agi2_public/holdout_001
+          if git diff --cached --quiet; then
+            echo 'No holdout changes to commit.'
+          else
+            git commit -m 'Record frozen ARC-AGI-2 holdout result'
+            git push
+          fi
+
+      - name: Upload frozen holdout evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arc-agi-2-frozen-holdout-evidence
+          path: benchmarks/arc_agi2_public/holdout_001
+
+      - name: Enforce completed holdout
+        if: always() && (steps.prepare.outcome != 'success' || steps.predict.outcome != 'success' || steps.score.outcome != 'success')
+        run: exit 1
