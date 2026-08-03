@@ -1,0 +1,18 @@
+{
+  "attempt": 2,
+  "dataset_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
+  "evidence_class": "developer-run public ARC-AGI-2 pilot; not independent AGI proof",
+  "exact_match": false,
+  "gold_shape": [
+    30,
+    30
+  ],
+  "predicted_shape": [
+    30,
+    30
+  ],
+  "scored_at": "2026-08-03T10:57:47.810083+00:00",
+  "sealed_commit": "25f930468bda44c18261b5000b8235ba386b74f1",
+  "task_id": "9aaea919",
+  "valid_rectangular_grid": true
+}
