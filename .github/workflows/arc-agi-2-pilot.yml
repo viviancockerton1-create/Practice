@@ -18,26 +18,68 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Clone pinned ARC-AGI-2 dataset
+        id: dataset
         run: |
           git clone --quiet https://github.com/arcprize/ARC-AGI-2.git vendor/ARC-AGI-2
           git -C vendor/ARC-AGI-2 checkout --quiet f3283f727488ad98fe575ea6a5ac981e4a188e49
 
       - name: Prepare sanitized pilot tasks
+        id: prepare
         run: python benchmarks/arc_harness.py prepare --arc-root vendor/ARC-AGI-2
 
       - name: Render compact answer-free task views
+        id: render
         run: python benchmarks/render_arc_compact.py
 
       - name: Generate first-attempt predictions with training-pair gates
+        id: first_attempt
         run: python benchmarks/solve_arc_pilot.py
 
       - name: Generate evidence-bounded second marker attempt
+        id: second_attempt
+        continue-on-error: true
         run: python benchmarks/revise_marker_second_attempt.py
 
       - name: Score predictions against untouched official outputs
+        id: score
+        if: always() && steps.first_attempt.outcome == 'success'
+        continue-on-error: true
         run: python benchmarks/arc_harness.py score --arc-root vendor/ARC-AGI-2
 
-      - name: Commit generated task files, predictions, and score
+      - name: Write workflow diagnostic
+        if: always()
+        env:
+          DATASET_OUTCOME: ${{ steps.dataset.outcome }}
+          PREPARE_OUTCOME: ${{ steps.prepare.outcome }}
+          RENDER_OUTCOME: ${{ steps.render.outcome }}
+          FIRST_ATTEMPT_OUTCOME: ${{ steps.first_attempt.outcome }}
+          SECOND_ATTEMPT_OUTCOME: ${{ steps.second_attempt.outcome }}
+          SCORE_OUTCOME: ${{ steps.score.outcome }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          mkdir -p benchmarks/arc_agi2_public/pilot_001
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          payload = {
+              "source_sha": os.environ["SOURCE_SHA"],
+              "recorded_at": datetime.now(timezone.utc).isoformat(),
+              "steps": {
+                  "dataset": os.environ["DATASET_OUTCOME"],
+                  "prepare": os.environ["PREPARE_OUTCOME"],
+                  "render": os.environ["RENDER_OUTCOME"],
+                  "first_attempt": os.environ["FIRST_ATTEMPT_OUTCOME"],
+                  "second_attempt": os.environ["SECOND_ATTEMPT_OUTCOME"],
+                  "score": os.environ["SCORE_OUTCOME"],
+              },
+          }
+          with open("benchmarks/arc_agi2_public/pilot_001/workflow_diagnostic.json", "w", encoding="utf-8") as f:
+              json.dump(payload, f, indent=2, sort_keys=True)
+              f.write("\n")
+          PY
+
+      - name: Commit generated task files, predictions, score, and diagnostic
+        if: always()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -45,12 +87,17 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No benchmark changes to commit.'
           else
-            git commit -m 'Record ARC-AGI-2 pilot benchmark result'
+            git commit -m 'Record ARC-AGI-2 pilot benchmark result and diagnostics'
             git push
           fi
 
       - name: Upload benchmark evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: arc-agi-2-pilot-evidence
           path: benchmarks/arc_agi2_public/pilot_001
+
+      - name: Enforce successful revision and scoring
+        if: always() && (steps.second_attempt.outcome != 'success' || steps.score.outcome != 'success')
+        run: exit 1
