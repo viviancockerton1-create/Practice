@@ -1,0 +1,51 @@
+{
+  "answer_exposure": "Gold test outputs excluded from holdout task files and unavailable to prediction command.",
+  "benchmark": "ARC-AGI-2 frozen-solver public holdout",
+  "dataset_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
+  "evidence_class": "developer-run public holdout; not independent or private AGI proof",
+  "excluded_pilot_task_ids": [
+    "36a08778",
+    "9aaea919",
+    "de809cff"
+  ],
+  "frozen_blob_checks": {
+    "benchmarks/solve_arc_pilot.py": {
+      "actual_blob": "3d6feff44dd86da3c7ed5ef18c3983a65704bf69",
+      "expected_blob": "3d6feff44dd86da3c7ed5ef18c3983a65704bf69",
+      "match": true
+    },
+    "benchmarks/solve_arc_pilot_v2.py": {
+      "actual_blob": "a58edcfab637a7fe9f9e9f3e3b34ec2b69d72b8f",
+      "expected_blob": "a58edcfab637a7fe9f9e9f3e3b34ec2b69d72b8f",
+      "match": true
+    }
+  },
+  "no_post_selection_modification_rule": true,
+  "prepared_at": "2026-08-03T11:01:13.952288+00:00",
+  "selection_method": "deterministic sample without replacement from sorted public evaluation tasks, excluding pilot IDs",
+  "selection_seed_sha256": "e63ffe495c3e5583745a2cd3e089a23f0521b4287b0a78c82a7d170df4811619",
+  "solver_frozen_before_selection": true,
+  "task_count": 20,
+  "task_ids": [
+    "20a9e565",
+    "28a6681f",
+    "2c181942",
+    "3a25b0d8",
+    "4c3d4a41",
+    "58f5dbd5",
+    "6e453dd6",
+    "78332cb0",
+    "7b80bb43",
+    "800d221b",
+    "89565ca0",
+    "b10624e5",
+    "c7f57c3e",
+    "cb2d8a2c",
+    "dbff022c",
+    "e3721c99",
+    "e376de54",
+    "edb79dae",
+    "eee78d87",
+    "f931b4a8"
+  ]
+}

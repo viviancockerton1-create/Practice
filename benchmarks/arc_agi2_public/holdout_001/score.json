@@ -1,0 +1,318 @@
+{
+  "benchmark": "ARC-AGI-2 frozen-solver public holdout",
+  "candidate": "Anamnesis AGI Candidate v0.3.0 \u2014 frozen ARC solver v2",
+  "coverage": 0.0,
+  "dataset_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
+  "evidence_class": "developer-run public holdout; not independent or private AGI proof",
+  "frozen_blobs": {
+    "benchmarks/solve_arc_pilot.py": "3d6feff44dd86da3c7ed5ef18c3983a65704bf69",
+    "benchmarks/solve_arc_pilot_v2.py": "a58edcfab637a7fe9f9e9f3e3b34ec2b69d72b8f"
+  },
+  "predicted_tasks": 0,
+  "scored_at": "2026-08-03T11:01:14.135027+00:00",
+  "task_accuracy": 0.0,
+  "tasks": [
+    {
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "task_id": "20a9e565",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        },
+        {
+          "exact": false,
+          "test_index": 1,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "28a6681f",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "2c181942",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "3a25b0d8",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        },
+        {
+          "exact": false,
+          "test_index": 1,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "task_id": "4c3d4a41",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        },
+        {
+          "exact": false,
+          "test_index": 1,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "58f5dbd5",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "6e453dd6",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "78332cb0",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        },
+        {
+          "exact": false,
+          "test_index": 1,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "7b80bb43",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "task_id": "800d221b",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "task_id": "89565ca0",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "b10624e5",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "c7f57c3e",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "cb2d8a2c",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        },
+        {
+          "exact": false,
+          "test_index": 1,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "task_id": "dbff022c",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "e3721c99",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        },
+        {
+          "exact": false,
+          "test_index": 1,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "e376de54",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "edb79dae",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": null,
+      "status": "unsupported_signature",
+      "task_id": "eee78d87",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        }
+      ]
+    },
+    {
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "task_id": "f931b4a8",
+      "task_solved": false,
+      "test_inputs": [
+        {
+          "exact": false,
+          "test_index": 0,
+          "valid_grid": false
+        },
+        {
+          "exact": false,
+          "test_index": 1,
+          "valid_grid": false
+        }
+      ]
+    }
+  ],
+  "tasks_solved": 0,
+  "test_input_accuracy": 0.0,
+  "test_inputs_solved": 0,
+  "total_tasks": 20,
+  "total_test_inputs": 27,
+  "training_gate_rejections": 6,
+  "unsupported_tasks": 14
+}

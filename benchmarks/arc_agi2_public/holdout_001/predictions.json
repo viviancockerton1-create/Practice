@@ -1,0 +1,226 @@
+{
+  "candidate": "Anamnesis AGI Candidate v0.3.0 \u2014 frozen ARC solver v2",
+  "frozen_blobs": {
+    "benchmarks/solve_arc_pilot.py": "3d6feff44dd86da3c7ed5ef18c3983a65704bf69",
+    "benchmarks/solve_arc_pilot_v2.py": "a58edcfab637a7fe9f9e9f3e3b34ec2b69d72b8f"
+  },
+  "generated_at": "2026-08-03T11:01:14.018550+00:00",
+  "tasks": {
+    "20a9e565": {
+      "attempt_1": [],
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "training_checks": [
+        {
+          "exact": false,
+          "train_index": 0
+        },
+        {
+          "exact": false,
+          "train_index": 1
+        },
+        {
+          "exact": false,
+          "train_index": 2
+        }
+      ]
+    },
+    "28a6681f": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[0, 1, 2, 3, 4, 5, 9]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "2c181942": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 4, 6, 7, 8]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "3a25b0d8": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 4, 6, 7, 8, 9]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "4c3d4a41": {
+      "attempt_1": [],
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "training_checks": [
+        {
+          "exact": false,
+          "train_index": 0
+        },
+        {
+          "exact": false,
+          "train_index": 1
+        }
+      ]
+    },
+    "58f5dbd5": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 4, 5, 6, 7, 8, 9]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "6e453dd6": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[0, 2, 5, 6]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "78332cb0": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 4, 6, 7, 8, 9]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "7b80bb43": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[0, 1, 3, 6]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "800d221b": {
+      "attempt_1": [],
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "training_checks": [
+        {
+          "exact": false,
+          "train_index": 0
+        },
+        {
+          "exact": false,
+          "train_index": 1
+        },
+        {
+          "exact": false,
+          "train_index": 2
+        }
+      ]
+    },
+    "89565ca0": {
+      "attempt_1": [],
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "training_checks": [
+        {
+          "exact": false,
+          "train_index": 0
+        },
+        {
+          "exact": false,
+          "train_index": 1
+        },
+        {
+          "exact": false,
+          "train_index": 2
+        }
+      ]
+    },
+    "b10624e5": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 4, 8, 9]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "c7f57c3e": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 4, 6, 8]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "cb2d8a2c": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 8]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "dbff022c": {
+      "attempt_1": [],
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "training_checks": [
+        {
+          "exact": false,
+          "train_index": 0
+        },
+        {
+          "exact": false,
+          "train_index": 1
+        },
+        {
+          "exact": false,
+          "train_index": 2
+        }
+      ]
+    },
+    "e3721c99": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[0, 1, 2, 3, 4, 5]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "e376de54": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 5, 7, 8, 9]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "edb79dae": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[1, 2, 3, 4, 5, 6, 7, 8]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "eee78d87": {
+      "attempt_1": [],
+      "error": "ValueError('No solver signature matched values=[0, 1, 3, 6, 7, 9]')",
+      "solver": null,
+      "status": "unsupported_signature",
+      "training_checks": []
+    },
+    "f931b4a8": {
+      "attempt_1": [],
+      "solver": "denoise-stamp",
+      "status": "rejected_by_training_gate",
+      "training_checks": [
+        {
+          "exact": false,
+          "train_index": 0
+        },
+        {
+          "exact": false,
+          "train_index": 1
+        },
+        {
+          "exact": false,
+          "train_index": 2
+        },
+        {
+          "exact": false,
+          "train_index": 3
+        },
+        {
+          "exact": false,
+          "train_index": 4
+        }
+      ]
+    }
+  }
+}
