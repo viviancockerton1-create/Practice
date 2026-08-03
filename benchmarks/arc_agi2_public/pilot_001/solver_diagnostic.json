@@ -1,5 +1,6 @@
 {
-  "all_training_pairs_exact": false,
+  "all_training_pairs_exact": true,
+  "solver_version": "v2",
   "tasks": {
     "36a08778": {
       "checks": [
@@ -16,29 +17,7 @@
           "train_index": 2
         },
         {
-          "exact": false,
-          "first_mismatches": [
-            {
-              "column": 0,
-              "expected": 6,
-              "predicted": 7,
-              "row": 9
-            },
-            {
-              "column": 2,
-              "expected": 6,
-              "predicted": 7,
-              "row": 9
-            },
-            {
-              "column": 3,
-              "expected": 6,
-              "predicted": 7,
-              "row": 9
-            }
-          ],
-          "mismatch_count": 3,
-          "shape_match": true,
+          "exact": true,
           "train_index": 3
         },
         {
@@ -50,7 +29,7 @@
           "train_index": 5
         }
       ],
-      "solver": "waterfall"
+      "solver": "waterfall-v2"
     },
     "9aaea919": {
       "checks": [
