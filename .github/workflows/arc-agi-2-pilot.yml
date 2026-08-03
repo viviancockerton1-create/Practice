@@ -28,8 +28,11 @@ jobs:
       - name: Render compact answer-free task views
         run: python benchmarks/render_arc_compact.py
 
-      - name: Generate predictions with training-pair gates
+      - name: Generate first-attempt predictions with training-pair gates
         run: python benchmarks/solve_arc_pilot.py
+
+      - name: Generate evidence-bounded second marker attempt
+        run: python benchmarks/revise_marker_second_attempt.py
 
       - name: Score predictions against untouched official outputs
         run: python benchmarks/arc_harness.py score --arc-root vendor/ARC-AGI-2
