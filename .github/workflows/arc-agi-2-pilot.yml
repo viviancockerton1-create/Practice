@@ -31,9 +31,9 @@ jobs:
         id: render
         run: python benchmarks/render_arc_compact.py
 
-      - name: Generate first-attempt predictions with training-pair gates
+      - name: Generate first-attempt predictions with corrected training-pair gates
         id: first_attempt
-        run: python benchmarks/solve_arc_pilot.py
+        run: python benchmarks/solve_arc_pilot_v2.py
 
       - name: Diagnose solver training mismatches
         id: solver_diagnostic
