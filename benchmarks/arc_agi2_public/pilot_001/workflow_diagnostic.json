@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-08-03T10:54:06.626671+00:00",
+  "source_sha": "1796a43b494ba59d154f936deb50201e85fdad52",
+  "steps": {
+    "dataset": "success",
+    "first_attempt": "failure",
+    "prepare": "success",
+    "render": "success",
+    "score": "skipped",
+    "second_attempt": "skipped"
+  }
+}
