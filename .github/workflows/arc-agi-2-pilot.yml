@@ -25,6 +25,9 @@ jobs:
       - name: Prepare sanitized pilot tasks
         run: python benchmarks/arc_harness.py prepare --arc-root vendor/ARC-AGI-2
 
+      - name: Render compact answer-free task views
+        run: python benchmarks/render_arc_compact.py
+
       - name: Score predictions when present
         run: python benchmarks/arc_harness.py score --arc-root vendor/ARC-AGI-2
 
