@@ -3,7 +3,13 @@ name: ARC-AGI-2 Public Pilot
 on:
   push:
     paths:
-      - 'benchmarks/**'
+      - 'benchmarks/arc_harness.py'
+      - 'benchmarks/render_arc_compact.py'
+      - 'benchmarks/solve_arc_pilot.py'
+      - 'benchmarks/solve_arc_pilot_v2.py'
+      - 'benchmarks/revise_marker_second_attempt.py'
+      - 'benchmarks/diagnose_arc_solvers.py'
+      - 'benchmarks/arc_agi2_public/pilot_001/**'
       - '.github/workflows/arc-agi-2-pilot.yml'
   workflow_dispatch:
 
