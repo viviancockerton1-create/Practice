@@ -28,10 +28,13 @@ jobs:
       - name: Render compact answer-free task views
         run: python benchmarks/render_arc_compact.py
 
-      - name: Score predictions when present
+      - name: Generate predictions with training-pair gates
+        run: python benchmarks/solve_arc_pilot.py
+
+      - name: Score predictions against untouched official outputs
         run: python benchmarks/arc_harness.py score --arc-root vendor/ARC-AGI-2
 
-      - name: Commit generated task files and score
+      - name: Commit generated task files, predictions, and score
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -39,7 +42,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No benchmark changes to commit.'
           else
-            git commit -m 'Record ARC-AGI-2 pilot benchmark state'
+            git commit -m 'Record ARC-AGI-2 pilot benchmark result'
             git push
           fi
 
