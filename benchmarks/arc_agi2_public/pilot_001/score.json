@@ -1,11 +1,11 @@
 {
   "benchmark": "ARC-AGI-2 public evaluation pilot",
-  "candidate": "Anamnesis AGI Candidate v0.3.0 \u2014 in-chat cognitive loop",
+  "candidate": "Anamnesis AGI Candidate v0.3.0 \u2014 reproducible pilot solver v2",
   "dataset_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
   "evidence_class": "developer-run public pilot; not independent and not AGI proof",
-  "scored_at": "2026-08-03T10:48:39.866894+00:00",
+  "scored_at": "2026-08-03T10:57:26.931951+00:00",
   "scoring": "Exact grid match; each test input may be solved by attempt 1 or attempt 2; all test inputs required for task success.",
-  "task_accuracy": 0.6666666666666666,
+  "task_accuracy": 1.0,
   "task_count": 3,
   "tasks": [
     {
@@ -32,14 +32,14 @@
     },
     {
       "task_id": "9aaea919",
-      "task_solved": false,
+      "task_solved": true,
       "test_inputs": [
         {
-          "attempt_1_exact": false,
+          "attempt_1_exact": true,
           "attempt_1_valid_grid": true,
           "attempt_2_exact": false,
-          "attempt_2_valid_grid": false,
-          "solved_within_two_attempts": false,
+          "attempt_2_valid_grid": true,
+          "solved_within_two_attempts": true,
           "test_index": 0
         }
       ]
@@ -59,7 +59,7 @@
       ]
     }
   ],
-  "tasks_solved": 2,
-  "test_input_accuracy": 0.75,
-  "test_inputs_solved": 3
+  "tasks_solved": 3,
+  "test_input_accuracy": 1.0,
+  "test_inputs_solved": 4
 }
