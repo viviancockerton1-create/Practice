@@ -1,0 +1,38 @@
+name: Score Sealed ARC Marker Attempt
+
+on:
+  push:
+    paths:
+      - 'benchmarks/score_sealed_marker.py'
+      - 'benchmarks/arc_agi2_public/pilot_001/sealed_attempt2_9aaea919.json'
+      - '.github/workflows/score-sealed-marker.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone pinned official ARC-AGI-2 data
+        run: |
+          git clone --quiet https://github.com/arcprize/ARC-AGI-2.git vendor/ARC-AGI-2
+          git -C vendor/ARC-AGI-2 checkout --quiet f3283f727488ad98fe575ea6a5ac981e4a188e49
+
+      - name: Score sealed prediction
+        run: python benchmarks/score_sealed_marker.py --arc-root vendor/ARC-AGI-2
+
+      - name: Commit score
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add benchmarks/arc_agi2_public/pilot_001/sealed_attempt2_score.json
+          if git diff --cached --quiet; then
+            echo 'No score change.'
+          else
+            git commit -m 'Record sealed ARC marker attempt score'
+            git push
+          fi
