@@ -3,9 +3,8 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
-from solve_arc_pilot import PILOT_DIR, choose_solver, dump_json
+from solve_arc_pilot_v2 import PILOT_DIR, choose_solver, dump_json
 
 
 def mismatch_summary(predicted, expected):
@@ -29,7 +28,7 @@ def mismatch_summary(predicted, expected):
 
 def main() -> None:
     manifest = json.loads((PILOT_DIR / "manifest.json").read_text(encoding="utf-8"))
-    report = {"all_training_pairs_exact": True, "tasks": {}}
+    report = {"solver_version": "v2", "all_training_pairs_exact": True, "tasks": {}}
     for task_id in manifest["task_ids"]:
         task = json.loads((PILOT_DIR / "tasks" / f"{task_id}.json").read_text(encoding="utf-8"))
         try:
