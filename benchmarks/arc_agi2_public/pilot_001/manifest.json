@@ -4,7 +4,7 @@
   "contamination_warning": "The source set is public; this is not private or independent AGI evidence.",
   "dataset_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
   "dataset_repository": "arcprize/ARC-AGI-2",
-  "prepared_at": "2026-08-03T10:57:26.651050+00:00",
+  "prepared_at": "2026-08-03T10:59:52.288795+00:00",
   "selection_method": "deterministic sample without replacement from sorted public evaluation filenames",
   "selection_seed_sha256": "6bcfc232d6e98588cc980880212489280d71830bca664f4019a7623d85cd39de",
   "task_count": 3,
