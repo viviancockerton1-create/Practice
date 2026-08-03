@@ -1,12 +1,13 @@
 {
-  "recorded_at": "2026-08-03T10:55:12.592011+00:00",
-  "source_sha": "25f930468bda44c18261b5000b8235ba386b74f1",
+  "recorded_at": "2026-08-03T10:55:26.596362+00:00",
+  "source_sha": "f523e5f629e6f9600f3a0b5b9b5f1fe1525a32f6",
   "steps": {
     "dataset": "success",
     "first_attempt": "failure",
     "prepare": "success",
     "render": "success",
     "score": "skipped",
-    "second_attempt": "skipped"
+    "second_attempt": "skipped",
+    "solver_diagnostic": "success"
   }
 }

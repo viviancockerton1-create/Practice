@@ -1,0 +1,86 @@
+{
+  "all_training_pairs_exact": false,
+  "tasks": {
+    "36a08778": {
+      "checks": [
+        {
+          "exact": true,
+          "train_index": 0
+        },
+        {
+          "exact": true,
+          "train_index": 1
+        },
+        {
+          "exact": true,
+          "train_index": 2
+        },
+        {
+          "exact": false,
+          "first_mismatches": [
+            {
+              "column": 0,
+              "expected": 6,
+              "predicted": 7,
+              "row": 9
+            },
+            {
+              "column": 2,
+              "expected": 6,
+              "predicted": 7,
+              "row": 9
+            },
+            {
+              "column": 3,
+              "expected": 6,
+              "predicted": 7,
+              "row": 9
+            }
+          ],
+          "mismatch_count": 3,
+          "shape_match": true,
+          "train_index": 3
+        },
+        {
+          "exact": true,
+          "train_index": 4
+        },
+        {
+          "exact": true,
+          "train_index": 5
+        }
+      ],
+      "solver": "waterfall"
+    },
+    "9aaea919": {
+      "checks": [
+        {
+          "exact": true,
+          "train_index": 0
+        },
+        {
+          "exact": true,
+          "train_index": 1
+        },
+        {
+          "exact": true,
+          "train_index": 2
+        }
+      ],
+      "solver": "marker-stack"
+    },
+    "de809cff": {
+      "checks": [
+        {
+          "exact": true,
+          "train_index": 0
+        },
+        {
+          "exact": true,
+          "train_index": 1
+        }
+      ],
+      "solver": "denoise-stamp"
+    }
+  }
+}
