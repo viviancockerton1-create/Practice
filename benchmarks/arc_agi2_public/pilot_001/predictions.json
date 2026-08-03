@@ -1,0 +1,18 @@
+{
+  "candidate": "Anamnesis AGI Candidate v0.3.0 \u2014 in-chat cognitive loop",
+  "notes": "Fill attempts without reading official test outputs. Each attempt is a list of output grids, one per test input.",
+  "tasks": {
+    "36a08778": {
+      "attempt_1": [],
+      "attempt_2": []
+    },
+    "9aaea919": {
+      "attempt_1": [],
+      "attempt_2": []
+    },
+    "de809cff": {
+      "attempt_1": [],
+      "attempt_2": []
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "answer_exposure": "Gold test outputs were removed from committed task files.",
+  "benchmark": "ARC-AGI-2 public evaluation pilot",
+  "contamination_warning": "The source set is public; this is not private or independent AGI evidence.",
+  "dataset_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
+  "dataset_repository": "arcprize/ARC-AGI-2",
+  "prepared_at": "2026-08-03T10:33:21.216481+00:00",
+  "selection_method": "deterministic sample without replacement from sorted public evaluation filenames",
+  "selection_seed_sha256": "6bcfc232d6e98588cc980880212489280d71830bca664f4019a7623d85cd39de",
+  "task_count": 3,
+  "task_ids": [
+    "36a08778",
+    "9aaea919",
+    "de809cff"
+  ]
+}
