@@ -35,8 +35,15 @@ jobs:
         id: first_attempt
         run: python benchmarks/solve_arc_pilot.py
 
+      - name: Diagnose solver training mismatches
+        id: solver_diagnostic
+        if: always() && steps.prepare.outcome == 'success'
+        continue-on-error: true
+        run: python benchmarks/diagnose_arc_solvers.py
+
       - name: Generate evidence-bounded second marker attempt
         id: second_attempt
+        if: steps.first_attempt.outcome == 'success'
         continue-on-error: true
         run: python benchmarks/revise_marker_second_attempt.py
 
@@ -53,6 +60,7 @@ jobs:
           PREPARE_OUTCOME: ${{ steps.prepare.outcome }}
           RENDER_OUTCOME: ${{ steps.render.outcome }}
           FIRST_ATTEMPT_OUTCOME: ${{ steps.first_attempt.outcome }}
+          SOLVER_DIAGNOSTIC_OUTCOME: ${{ steps.solver_diagnostic.outcome }}
           SECOND_ATTEMPT_OUTCOME: ${{ steps.second_attempt.outcome }}
           SCORE_OUTCOME: ${{ steps.score.outcome }}
           SOURCE_SHA: ${{ github.sha }}
@@ -69,6 +77,7 @@ jobs:
                   "prepare": os.environ["PREPARE_OUTCOME"],
                   "render": os.environ["RENDER_OUTCOME"],
                   "first_attempt": os.environ["FIRST_ATTEMPT_OUTCOME"],
+                  "solver_diagnostic": os.environ["SOLVER_DIAGNOSTIC_OUTCOME"],
                   "second_attempt": os.environ["SECOND_ATTEMPT_OUTCOME"],
                   "score": os.environ["SCORE_OUTCOME"],
               },
@@ -78,7 +87,7 @@ jobs:
               f.write("\n")
           PY
 
-      - name: Commit generated task files, predictions, score, and diagnostic
+      - name: Commit generated task files, predictions, score, and diagnostics
         if: always()
         run: |
           git config user.name 'github-actions[bot]'
