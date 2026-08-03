@@ -3,7 +3,7 @@
   "candidate": "Anamnesis AGI Candidate v0.3.0 \u2014 reproducible pilot solver v2",
   "dataset_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
   "evidence_class": "developer-run public pilot; not independent and not AGI proof",
-  "scored_at": "2026-08-03T10:59:52.597938+00:00",
+  "scored_at": "2026-08-03T11:00:40.227032+00:00",
   "scoring": "Exact grid match; each test input may be solved by attempt 1 or attempt 2; all test inputs required for task success.",
   "task_accuracy": 1.0,
   "task_count": 3,
